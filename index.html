@@ -241,6 +241,9 @@
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .timing-card h4 {
@@ -265,6 +268,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .role-card:hover {
@@ -294,6 +300,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .benefit-card:hover {
@@ -385,6 +394,8 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .info-card h4 {
@@ -479,37 +490,43 @@
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             h2 {
-                font-size: 1.75rem;
+                font-size: 1.6rem;
+                margin-bottom: 30px;
             }
 
             section {
-                padding: 60px 0;
+                padding: 50px 0;
             }
 
-            .hero-content {
+            .hero-content,
+            .about-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 30px;
             }
 
-            .hero-text p {
+            .hero-text p,
+            .about-text p {
                 max-width: 100%;
+                font-size: 1rem;
             }
 
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: calc(100vh - 70px);
                 background-color: white;
                 flex-direction: column;
                 align-items: center;
-                padding-top: 40px;
+                padding: 20px;
                 transition: left 0.3s ease;
+                overflow-y: auto;
             }
 
             .nav-links.active {
@@ -517,29 +534,113 @@
             }
 
             .nav-links li {
-                margin: 15px 0;
+                margin: 12px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 8px 0;
             }
 
             .mobile-menu-btn {
                 display: block;
+                font-size: 1.3rem;
+            }
+
+            .timing-grid,
+            .roles-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .role-card,
+            .benefit-card {
+                padding: 20px;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+                margin-right: 5px;
+                margin-bottom: 8px;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.75rem;
+                font-size: 1.6rem;
+                margin-bottom: 15px;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+                margin-bottom: 25px;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 0 15px;
             }
 
             section {
-                padding: 50px 0;
+                padding: 40px 0;
             }
 
             .contact-form {
-                padding: 30px 20px;
+                padding: 25px 15px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .info-card {
+                padding: 15px;
+            }
+
+            .role-card p,
+            .benefit-card p,
+            .timing-card p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .logo img {
+                height: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.4rem;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .nav-links {
+                top: 60px;
+                height: calc(100vh - 60px);
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -574,7 +675,7 @@
                 <div class="hero-text">
                     <span class="badge">PSEB Registered</span>
                     <span class="badge">Ministry of IT, Pakistan</span>
-                    <h1>1-Month Summer Internship Program 2025</h1>
+                    <h1>1-Month Summer Internship Program July 2025</h1>
                     <p>Gain hands-on experience in a real-world, project-based environment with High Tech Software House
                         & Training Center. Earn a PSEB-recognized certificate and kickstart your tech career.</p>
                     <div style="display: flex; gap: 15px;">
@@ -583,7 +684,8 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="Remote-Internship.jpg" alt="Internship Program">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                        alt="Internship Program">
                 </div>
             </div>
         </div>
